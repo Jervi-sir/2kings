@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class="body">
+        <div class="le-cardre">
+            <div class="line">
+                <div class="bg"></div>
+            </div>
+        </div>
+        <div id="bienvenue" class="bienvenue">
+                <div class="twokings">
+                    <img src="2ks.svg" alt="">
+                </div>
+                <div class="paroles">
+                    we turn your ideas into website business  
+                </div>
+        </div>
+        <div class="tabs">
+            <div class="tab">
+                <h3>Projects</h3>
+                <span>we made</span>
+            </div>
+
+            <div id="myBtn" class="tab swipe-up">
+                <h3>Change your</h3>
+            </div>
+
+            <div class="tab">
+                <h3>See more</h3>
+                <span>about us</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("myBtn").addEventListener("click", function() {
+            document.getElementById('bienvenue').classList.add('logo-up-corner')
+        });
+    </script>
+</body>
+</html>

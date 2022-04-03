@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&family=Share+Tech+Mono&display=swap');
+
+*, *::after, *::before {
+    font-family: 'Share Tech Mono', monospace;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.body {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.le-cardre {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    padding: 40px;
+}
+
+.le-cardre .line {
+    border: 5px solid black;
+    display: block;
+    height: 100%;
+
+}
+
+
+.bienvenue {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+.bienvenue img {
+    width: 100%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+}
+
+.tabs {
+    position: absolute;
+    bottom: 5%;
+    left: 0%;
+    right: 0%;
+    transform: translate(-0%, -50%);
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabs .tab h3 {
+    margin: 0;
+}
+.tabs .tab {
+    text-align: center;
+    cursor: pointer;
+}
+
+/*-------   HOVERS ---------*/
+.tabs .tab:hover h3 {
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+.tabs .tab:hover span {
+    opacity: 0.9;
+    transition: 0.5s;
+}
+
+
+/*-----
+    Startup animations 
+---------*/
+
+.le-cardre {
+    transition: 1s; 
+}
+
+.le-cardre .line {
+    animation: cadreStartup 0.5s cubic-bezier(.6,1.02,.94,.99) forwards;
+}
+
+.le-cardre .line .bg {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: linear-gradient(-45deg, #f1eeed, #ffffff, #dfebf0, #a0ddcf59);
+    /*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
+    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+}
+
+.bienvenue {
+    opacity: 0;
+    animation: logoOpacity 0.8s ease-in forwards;
+    animation-delay: 0.3s;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes cadreStartup{
+    0%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes logoOpacity{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+/*------------
+    animate logo of the middle into top corner left
+    add  logo-up-corner class
+---------------*/
+.logo-up-corner {
+    opacity: 1;
+    display: inline-block;
+    animation: slideLogoContainer 0.5s ease-in forwards;
+    align-items: unset;
+    width: auto;
+}
+
+.logo-up-corner img {
+    opacity: 1;
+    animation: makeImageSmall 0.5s ease-in forwards;
+}
+
+.logo-up-corner .paroles {
+    opacity: 1;
+    animation: hideParoles 0.5s ease-in forwards;
+}
+/*--- animation ---*/
+@keyframes slideLogoContainer{
+    0%{
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    100%{
+        top: 0;
+        left: 40px;
+        transform: translate(-0%, 0%);
+    }
+}
+
+@keyframes makeImageSmall{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 100px;
+    }
+}
+
+@keyframes hideParoles{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+        display: none;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+
